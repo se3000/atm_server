@@ -1,17 +1,21 @@
 development:
-  adapter: postgresql
+  adapter: postgis
   database: atm_finder_development
+  postgis_extension: true
+  schema_search_path: public,postgis
   pool: 5
   timeout: 5000
 
 test:
-  adapter: postgresql
+  adapter: postgis
   database: atm_finder_test
+  postgis_extension: true
+  schema_search_path: public,postgis
   pool: 5
   timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: postgis
   database: atm_finder_production
   pool: 5
   timeout: 5000

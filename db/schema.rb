@@ -15,12 +15,12 @@ ActiveRecord::Schema.define(version: 20130701193136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "locations", force: true do |t|
-    t.string "bank_name"
-    t.float  "fee"
-    t.float  "latitude"
-    t.float  "longitude"
+    t.string  "bank_name"
+    t.float   "fee"
+    t.spatial "coordinate", limit: {:srid=>4326, :type=>"point", :geographic=>true}
   end
 
 end
