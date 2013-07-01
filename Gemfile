@@ -17,4 +17,5 @@ group :development, :test do
   gem 'debugger', group: [:development, :test]
   gem 'pry'
   gem 'rspec-rails'
+  gem 'valid_attribute'
 end
