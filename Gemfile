@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 gem 'activerecord-postgis-adapter'
+gem 'active_model_serializers'
 gem 'haml'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'

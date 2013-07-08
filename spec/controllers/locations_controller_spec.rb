@@ -28,4 +28,14 @@ describe LocationsController do
       end
     end
   end
+
+  describe "#search" do
+    before { 3.times { Location.create!(latitude: 1, longitude: 1) } }
+
+    it "returns all locations" do
+      get :search
+
+      response.body.should == {locations: ActiveModel::ArraySerializer.new(Location.all)}.to_json
+    end
+  end
 end

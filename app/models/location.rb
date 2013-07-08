@@ -3,6 +3,10 @@ class Location < ActiveRecord::Base
 
   validates :latitude, :longitude, presence: true
 
+  def active_model_serializer
+    LocationSerializer
+  end
+
   def self.point_factory
     @point_factory ||= RGeo::Geographic.spherical_factory(:srid => 4326)
   end

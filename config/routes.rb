@@ -1,6 +1,10 @@
 AtmFinder::Application.routes.draw do
   root 'home#welcome'
-  resources :locations
+  resources :locations do
+    collection do
+      get :search
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

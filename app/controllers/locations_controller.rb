@@ -9,4 +9,8 @@ class LocationsController < ActionController::API
       render text: location.errors.full_messages.join(' ')
     end
   end
+
+  def search
+    render json: Location.all
+  end
 end
