@@ -1,6 +1,8 @@
 class Location < ActiveRecord::Base
   attr_accessor :latitude, :longitude
 
+  validates :latitude, :longitude, presence: true
+
   def self.point_factory
     @point_factory ||= RGeo::Geographic.spherical_factory(:srid => 4326)
   end
@@ -17,6 +19,14 @@ class Location < ActiveRecord::Base
     @longitude = long
     set_coordinate
     longitude
+  end
+
+  def latitude
+    @latitude ||= (coordinate && coordinate.latitude)
+  end
+
+  def longitude
+    @longitude ||= (coordinate && coordinate.longitude)
   end
 
 
