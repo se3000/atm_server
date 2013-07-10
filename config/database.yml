@@ -17,5 +17,7 @@ test:
 production:
   adapter: postgis
   database: atm_finder_production
+  postgis_extension: true
+  schema_search_path: public,postgis
   pool: 5
   timeout: 5000
